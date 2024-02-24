@@ -65,6 +65,7 @@ describe('Webdriverio main page', () => {
         let api = await $("/html/body/div/nav/div[3]/div[2]/div[1]/ul/li[2]/a");
         await api.click();
         await browser.pause(1000);
+        await expect(await browser.getUrl()).toBe("https://webdriver.io/docs/api");
         let intro = await $("//*/h1");
         await expect(intro).toBePresent();
         await browser.pause(1000);
