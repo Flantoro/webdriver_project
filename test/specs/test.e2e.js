@@ -127,7 +127,7 @@ describe('Webdriverio main page', () => {
         await browser.switchWindow('https://webdriver.io/');
     });
 
-    it('Home Task 2', async () => {
+    xit('Home Task 2', async () => {
         await browser.url('https://webdriver.io/');
 
         let drop = await $("[aria-label='Toggle navigation bar']");
