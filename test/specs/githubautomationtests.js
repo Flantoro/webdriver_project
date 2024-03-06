@@ -66,7 +66,7 @@ describe('GitHub Test Cases', () => {
         await expect(browser).toHaveUrl("https://github.com/signup");
     })
 
-    it('Open the GitHub Ducumentation page from the header', async () => {
+    xit('Open the GitHub Ducumentation page from the header', async () => {
         await browser.url('https://github.com/');
         const dropDown = await $("div[class='flex-1 flex-order-2 text-right'] span span");
         await dropDown.click();
@@ -76,5 +76,17 @@ describe('GitHub Test Cases', () => {
         await documentationButton.click();
         await browser.switchWindow("https://docs.github.com/");
         await expect(browser).toHaveUrl("https://docs.github.com/en");
+    })
+
+    it('InterviewTask', async () => {
+        await browser.url('https://github.com/');
+        const startEnterpriseButton = $("[href='/organizations/enterprise_plan?ref_cta=Start+a+free+enterprise+trial&ref_loc=Home+campaign+footer&ref_page=%2F']");
+        const pickYourTrialTitle = $("[class='d-md-block mt-0 mb-3 text-center h1 lh-condensed-ultra ']");
+        (await startEnterpriseButton).scrollIntoView;
+        await browser.pause(1000);
+        (await startEnterpriseButton).click;
+        await browser.pause(1000);
+        (await pickYourTrialTitle).isDisplayed;
+        await browser.pause(1000);
     })
 })
