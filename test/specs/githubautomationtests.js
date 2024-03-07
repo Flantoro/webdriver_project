@@ -82,11 +82,11 @@ describe('GitHub Test Cases', () => {
         await browser.url('https://github.com/');
         const startEnterpriseButton = $("[href='/organizations/enterprise_plan?ref_cta=Start+a+free+enterprise+trial&ref_loc=Home+campaign+footer&ref_page=%2F']");
         const pickYourTrialTitle = $("[class='d-md-block mt-0 mb-3 text-center h1 lh-condensed-ultra ']");
-        (await startEnterpriseButton).scrollIntoView;
+        (await startEnterpriseButton).scrollIntoView();
         await browser.pause(1000);
-        (await startEnterpriseButton).click;
+        (await startEnterpriseButton).click();
         await browser.pause(1000);
-        (await pickYourTrialTitle).isDisplayed;
+        (await pickYourTrialTitle).isDisplayed();
         await browser.pause(1000);
     })
 })
